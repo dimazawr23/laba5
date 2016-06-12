@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main()
 {
@@ -15,7 +16,7 @@ int main()
 	if (d >= 0) {
 		x1 = (-b + sqrt(d)) / 2 * a;
 		x2 = (-b - sqrt(d)) / 2 * a;
-		printf("Roots of the equation: %.2f & %.2f", x1, x2);
+		printf("Roots of the equation: %.2f & %.2f\n", x1, x2);
 	}
 	else
 		printf("Discriminant is negative\n");
