@@ -3,23 +3,21 @@
 
 int main()
 {
-	int a;
-	int b;
-	int c;
-	float x1;
-	float x2;
-	float d;
+	float a;
+	float b;
+	float c;
+	int status;
+	Roots answer;
 
 	printf("Input your A, B, C for equation\n");
-	scanf("%d %d %d", &a, &b, &c);
-	d = b * b - 4 * a * c;
-	if (d >= 0) {
-		x1 = (-b + sqrt(d)) / 2 * a;
-		x2 = (-b - sqrt(d)) / 2 * a;
-		printf("Roots of the equation: %.2f & %.2f\n", x1, x2);
+	scanf("%f %f %f", &a, &b, &c);
+	
+	answer = solve(a, b, c, &status);
+	if (status > 0) {
+		printf("Roots of the equation: %.2f & %.2f\n", answer.x1, answer.x2);
 	}
 	else
-		printf("Discriminant is negative\n");
+		printf("Non-quadratic equation\n");
 
 	return 0;
 }
